@@ -58,6 +58,7 @@ def BrownRobinson(strategyMatrix, targetError, maxStep):
                 print('{0}: {1}'.format(k, y.count(k)/(len(y)-1)))
                 answer[1].append(y.count(k)/(len(y)-1))
             answer.append(currentStep[ERROR])
+            answer.append(0.5*(minTopScore + maxLowerScore))
             total["solution"] = algSteps
             total["answer"] = answer
             return total

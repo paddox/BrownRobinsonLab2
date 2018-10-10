@@ -45,10 +45,10 @@ class Application(QtWidgets.QMainWindow, mainWindow.Ui_MainWindow):
         self.tableWidgetSolution.resizeColumnsToContents()
 
         self.tableWidgetAnswer.setRowCount(1)
-        self.tableWidgetAnswer.setColumnCount(len(answer[0])+len(answer[1])+1)
+        self.tableWidgetAnswer.setColumnCount(len(answer[0])+len(answer[1])+2)
         headerAnswer = ["x{}".format(a+1) for a in range(len(answer[0]))]
         headerAnswer.extend(["y{}".format(a+1) for a in range(len(answer[1]))])
-        headerAnswer.append("Ошибка")
+        headerAnswer.append(["Ошибка", "Выигрыш А/\nпроигрыш Б"])
         self.tableWidgetAnswer.setHorizontalHeaderLabels(headerAnswer)
         for i in range(len(answer[0])):
             self.tableWidgetAnswer.setItem(0, i, QtWidgets.QTableWidgetItem(str(round(answer[0][i], 3))))
